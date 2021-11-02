@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>mememuseum_practice</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		html{font-family: 'EB Garamond', serif;}
+
+
+		//여기까지 폰트 셋팅
+
+		* { box-sizing: border-box;}
+
+    	#leftheader{
+    		background-color: #ffeb3b;
+        	height: 700px;
+        	padding: 100px;
+        	width: 400px;
+        	position: fixed;
+        	//->이거 핵중요함
+    	}
+
+ 
+    	#content{
+    		margin-left: 750px;
+
+    		    	}
+
+    	#meme1{
+    		margin-top: 100px;
+    	}
+
+    	#meme6{
+    		margin-top: 100px;
+    	}
+
+    	#meme11{
+    		margin-top: 100px;
+    	}
+
+    	#meme3{
+    		margin-top: 100px;
+    	}
+
+    	#meme4{
+    		margin-top: 100px;
+    	}
+
+    	#meme5{
+    		margin-top: 100px;
+    	}
+
+    	#meme8{
+    		margin-top: 100px;
+    	}
+
+    	#meme2{
+    		margin-top: 100px;
+    	}
+
+    	#meme9{
+    		margin-top: 100px;
+    	}
+
+
+
+    	 /* Scroll Animation (sa, 스크롤 애니메이션) */
+      	.sa {
+        opacity: 0;
+        transition: all .5s ease;
+      	}
+
+      	/* 아래에서 위로 페이드 인 */
+      	.sa-up {
+        transform: translate(0, 100px);
+      	}
+
+      	.sa.show {
+        opacity: 1;
+        transform: none;
+    	}
+
+
+
+
+    	//#zzalBut{
+    		z-index: 9;
+    		width: 30%;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		text-align: center;
+    		padding: 350px;
+    		padding-top: 0;
+
+
+    	}
+    	//#yourpic{
+    		z-index: 9;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		text-align: center;
+    		padding: 100px;
+    		padding-top: 0;
+
+    	}
+    	
+
+    	//.grade{position: absolute; left: 0;top: 0;}
+
+    	
+
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div id="leftheader" style="font-size: 30px; margin-top: 0px; padding-top: 250px; z-index: 9;">
+			<h1>Best Meme for Exam</h1>
+				<h3>
+					The most loved and popular memes by students, During the exam period.
+				</h3>
+
+				<p>
+					The most loved and popular memes by students, During the exam period. Enjoy this beautiful meme here. I hope you find a meme that fits your situation.
+				</p>
+		
+		</div>
+	
+
+	</header>
+
+
+
+
+	<section>
+
+		<div id="content">
+			
+				<img id= meme1 onmouseover="mouseOver()" onmouseout="mouseOut()" src= "mpic1.jpg">
+				<img class= sa sa-up id= meme6 src= "mpic6.jpg">
+				<img class= sa sa-up id= meme11 src= "mpic11.jpg">
+				<img class= sa sa-up id= meme3 src= "mpic3.jpg">
+				<img class= sa sa-up id= meme4 src= "mpic4.jpg">
+				<img class= sa sa-up id= meme5 src= "mpic5.jpg">
+				<img class= sa sa-up id= meme8 src= "mpic8.jpg">
+				<img class= sa sa-up id= meme2 src= "mpic2.jpg">
+				<img class= sa sa-up id= meme9 src= "mpic9.jpg">
+				
+		</div>
+
+
+
+
+		<script type="text/javascript">
+
+		//마우스오버
+		function mouseOver() {
+  		document.getElementById("meme1").style.opacity = "0.4";
+		}
+
+		function mouseOut() {
+  		document.getElementById("meme1").style.opacity = "1";
+		}
+
+
+
+
+		// Scroll Animation (sa, 스크롤 애니메이션)
+      	const saTriggerMargin = 300;
+     	 const saElementList = document.querySelectorAll('.sa');
+
+      	const saFunc = function() {
+        for (const element of saElementList) {
+          if (!element.classList.contains('show')) {
+            if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+              element.classList.add('show');
+            		}
+          		}
+        	}
+      	}
+
+      window.addEventListener('load', saFunc);
+      window.addEventListener('scroll', saFunc);
+
+		
+		</script>
+			
+		</div>
+	
+
+	</section>
+
+</body>
+</html>
